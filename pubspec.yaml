@@ -1,0 +1,68 @@
+name: markdown_logger
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+  
+  # Database
+  sqflite: ^2.3.2
+  path: ^1.9.0
+  
+  # File System & Permissions
+  path_provider: ^2.1.2
+  permission_handler: ^11.3.0
+  
+  # Health Data
+  health: ^11.0.0
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  
+  # Share
+  share_plus: ^9.0.0
+  
+  # Utils
+  intl: ^0.19.0
+  uuid: ^4.3.3
+
+  cupertino_icons: ^1.0.6
+  file_picker: ^8.0.0
+  http: ^1.2.0
+  geolocator: ^11.0.0
+  flutter_native_splash: ^2.3.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+  
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  min_sdk_android: 26
+  adaptive_icon_background: "#1565C0"
+  adaptive_icon_foreground: "assets/icon.png"
+
+flutter_native_splash:
+  color: "#1565C0"
+  image: assets/icon.png
+  android: true
+  ios: true
+
+flutter:
+  uses-material-design: true
