@@ -13,8 +13,8 @@
 ## Download
 
 ### BOOTH
-- 🆓 [無料版](https://booth.pm/ja/items/XXXXXXXX) ← リンクを更新してください
-- ☕ [お布施版](https://booth.pm/ja/items/XXXXXXXX) ← 開発支援にご協力ください！
+- 🆓 [無料版](https://sakanahanohito.booth.pm/items/7800110)
+- ☕ [お布施版](https://sakanahanohito.booth.pm/items/7800343) ← 開発支援にご協力ください！
 
 > ※ 無料版とお布施版は全く同じ機能です。開発支援としてお気持ち頂ける方向けです。
 
