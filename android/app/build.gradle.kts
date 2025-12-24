@@ -53,18 +53,6 @@ android {
             }
         }
     }
-
-    packaging {
-        jniLibs {
-            useLegacyPackaging = true
-            keepDebugSymbols += setOf("**/*.so")
-        }
-        resources {
-            excludes += setOf("META-INF/*")
-        }
-        // Explicitly do not strip any .so files
-        jniLibs.pickFirsts += setOf("**/*.so")
-    }
 }
 
 flutter {
@@ -73,24 +61,4 @@ flutter {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
-}
-
-// Force disable ALL strip debug symbols tasks to fix AAB build issues
-afterEvaluate {
-    tasks.matching { task -> 
-        task.name.contains("strip", ignoreCase = true) || 
-        task.name.contains("extractNativeSymbol", ignoreCase = true) ||
-        task.name.contains("mergeNativeDebugMetadata", ignoreCase = true)
-    }.configureEach {
-        enabled = false
-    }
-}
-
-// Also try to catch any remaining strip-related tasks
-gradle.taskGraph.whenReady {
-    allTasks.filter { task -> 
-        task.name.lowercase().contains("strip") 
-    }.forEach { task ->
-        task.enabled = false
-    }
 }
