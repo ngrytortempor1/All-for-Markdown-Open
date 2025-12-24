@@ -131,12 +131,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onTap: () => _showSaveLocationDialog(),
           ),
           
-          ListTile(
-            leading: const Icon(Icons.delete_sweep, color: Colors.red),
-            title: const Text('全データを削除'),
-            subtitle: const Text('この操作は取り消せません'),
-            onTap: () => _showDeleteDialog(),
-          ),
+
 
           const Divider(),
 
@@ -351,35 +346,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  void _showDeleteDialog() {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('全データを削除'),
-        content: const Text('この操作は取り消せません。\n本当に全てのデータを削除しますか？'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('キャンセル'),
-          ),
-          TextButton(
-            onPressed: () async {
-              final db = DatabaseService.instance;
-              await db.clearAllData();
-              if (mounted) {
-                Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('全データを削除しました')),
-                );
-              }
-            },
-            style: TextButton.styleFrom(foregroundColor: Colors.red),
-            child: const Text('削除する'),
-          ),
-        ],
-      ),
-    );
-  }
+
 }
 
 class _SectionHeader extends StatelessWidget {
